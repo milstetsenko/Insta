@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="334" id="RiT-YC-L1c" customClass="PostCell" customModule="Insta" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="334" id="RiT-YC-L1c" customClass="PostCell" customModule="Insta" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="334"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RiT-YC-L1c" id="Bjs-yj-ZGA">
@@ -136,7 +136,7 @@
                                                 <constraint firstAttribute="width" secondItem="TSc-E2-zC1" secondAttribute="height" multiplier="398:267" id="GdQ-bF-Kv6"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ0-6b-AsH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ0-6b-AsH">
                                             <rect key="frame" x="114" y="283" width="75" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
@@ -151,7 +151,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="EWG-NK-Sl7" firstAttribute="leading" secondItem="Bjs-yj-ZGA" secondAttribute="leading" constant="6" id="B4U-bo-H3u"/>
-                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="BJ0-6b-AsH" secondAttribute="trailing" constant="205" id="BAB-YD-rDx"/>
                                         <constraint firstItem="TSc-E2-zC1" firstAttribute="leading" secondItem="Bjs-yj-ZGA" secondAttribute="leading" constant="8" id="K4g-bJ-6xe"/>
                                         <constraint firstAttribute="trailing" secondItem="TSc-E2-zC1" secondAttribute="trailing" constant="8" id="UfB-sA-Tdu"/>
                                         <constraint firstItem="TSc-E2-zC1" firstAttribute="top" secondItem="Bjs-yj-ZGA" secondAttribute="top" constant="8" id="d7o-Rl-JoF"/>
@@ -161,6 +160,11 @@
                                         <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="BJ0-6b-AsH" secondAttribute="bottom" constant="8" id="kfz-xa-aB5"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CaptionLabel" destination="BJ0-6b-AsH" id="GQD-In-Sb4"/>
+                                    <outlet property="UserNameLabel" destination="EWG-NK-Sl7" id="v3q-dg-9Zi"/>
+                                    <outlet property="photoview" destination="TSc-E2-zC1" id="tK3-EZ-Dx4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -172,6 +176,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ynH-jL-SKT" id="dUi-Bi-vTR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLu-an-mgV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
